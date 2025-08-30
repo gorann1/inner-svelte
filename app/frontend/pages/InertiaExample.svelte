@@ -1,11 +1,12 @@
 <script lang="ts">
-  import svelteSvg from '/assets/svelte.svg'
-  import inertiaSvg from '/assets/inertia.svg'
-  import viteRubySvg from '/assets/vite_ruby.svg'
+  import svelteSvg from "/assets/svelte.svg";
+  import inertiaSvg from "/assets/inertia.svg";
+  import viteRubySvg from "/assets/vite_ruby.svg";
+  import { Link } from "@inertiajs/svelte";
 
-  let { name }: { name: string } = $props()
+  let { name }: { name: string } = $props();
 
-  let count = $state(0)
+  let count = $state(0);
 </script>
 
 <svelte:head>
@@ -34,6 +35,9 @@
       count is {count}
     </button>
     <p>
+      <link rel="stylesheet" href="" />
+      <Link href="/about">About my site</Link><br />
+      <Link href="/admin">Dashboard</Link><br />
       Edit <code>app/frontend/pages/InertiaExample.svelte</code> and save to test
       HMR
     </p>
