@@ -25,6 +25,10 @@ gem "solid_cable"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Ruby on Rails applications monitoring (https://www.rorvswild.com)
+gem "rorvswild"
+
+
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "kamal", require: false
 
@@ -40,6 +44,8 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+  gem "rspec-rails", "~> 8.0.0"
+
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -48,12 +54,40 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "lucide-rails", "~> 0.7.1"
+
+  # Security
+  gem "devise", "~> 4.9"
+  # prettier plugin for the Ruby programming language (https://github.com/prettier/plugin-ruby#readme)
+  gem "prettier"
+
+  # A gem for generating annotations for Rails projects. (https://github.com/drwl/annotaterb)
+  gem "annotaterb"
+
+  # Pretty print Ruby objects with proper indentation and colors (https://github.com/amazing-print/amazing_print)
+  gem "amazing_print"
+  gem "guard-rspec", require: false
+
+  # Code Quality
+  # gem 'rubocop-shopify', require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rspec", require: false
+  gem "rubocop-rspec_rails", require: false
+  gem "rubocop-factory_bot", require: false
+  gem "rubocop-obsession", require: false
+  gem "rubocop-thread_safety", require: false
+  gem "bundler-audit", require: false
+  gem "rails_best_practices", require: false
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "database_cleaner-active_record"
+  # Code coverage for Ruby (https://github.com/simplecov-ruby/simplecov)
+  gem "simplecov", require: false
 end
 
 gem "inertia_rails", "~> 3.10"
