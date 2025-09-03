@@ -1,13 +1,17 @@
 <script lang="ts">
+  import Layout from "../AdminLayout.svelte";
   import { Link } from "@inertiajs/svelte";
 </script>
 
 <svelte:head>
   <title>Admin Page | Dashboard</title>
 </svelte:head>
-<div class="inertia_example">
-  <Link href="/">Home my site</Link>
-</div>
+
+<Layout>
+  <header>
+    <Link href="/">Home my site</Link>
+  </header>
+</Layout>
 
 <style>
 </style>
